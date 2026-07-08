@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: linear-gradient(145deg, #f6f0ff 0%, #e8f0fe 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Ortak kart */
+.card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 32px;
+    padding: 40px 36px;
+    max-width: 520px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(94, 78, 148, 0.15),
+                0 8px 24px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: transform 0.25s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 28px 72px rgba(94, 78, 148, 0.20);
+}
+
+/* Başlıklar */
+h1, h2 {
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #5b3cc4, #7b5ed7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 12px;
+}
+
+h2 {
+    font-size: 1.6rem;
+    margin-bottom: 24px;
+}
+
+p, label, .info-text {
+    color: #2d2a3e;
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-text-fill-color: #2d2a3e; /* override gradient for normal text */
+}
+
+/* Öneri metni */
+.suggestion {
+    font-size: 1.25rem;
+    font-weight: 500;
+    background: #f3f0ff;
+    padding: 18px 24px;
+    border-radius: 16px;
+    border-left: 5px solid #7b5ed7;
+    margin: 20px 0 28px;
+    color: #1f1a2e;
+}
+
+/* Form elemanları */
+.form-group {
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: #3d3566;
+}
+
+/* Checkbox'ı toggle switch yapalım */
+.switch-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 4px;
+}
+
+.switch {
+    position: relative;
+    width: 48px;
+    height: 28px;
+    flex-shrink: 0;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #cbc3e6;
+    transition: 0.3s;
+    border-radius: 34px;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background: white;
+    transition: 0.3s;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.switch input:checked + .slider {
+    background: #7b5ed7;
+}
+
+.switch input:checked + .slider::before {
+    transform: translateX(20px);
+}
+
+.switch-label {
+    font-weight: 400;
+    color: #3d3566;
+}
+
+/* Textarea ve input */
+textarea, input[type="text"] {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #e4def7;
+    border-radius: 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    background: white;
+    transition: 0.2s;
+    resize: vertical;
+    color: #1f1a2e;
+}
+
+textarea:focus, input[type="text"]:focus {
+    outline: none;
+    border-color: #7b5ed7;
+    box-shadow: 0 0 0 4px rgba(123, 94, 215, 0.15);
+}
+
+textarea {
+    min-height: 100px;
+}
+
+/* Buton */
+.btn {
+    display: inline-block;
+    background: #7b5ed7;
+    color: white !important;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.25s ease;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    letter-spacing: 0.3px;
+    -webkit-text-fill-color: white;
+}
+
+.btn:hover {
+    background: #5b3cc4;
+    transform: scale(1.01);
+    box-shadow: 0 8px 24px rgba(91, 60, 196, 0.30);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #7b5ed7 !important;
+    border: 2px solid #7b5ed7;
+    -webkit-text-fill-color: #7b5ed7;
+    width: auto;
+    padding: 10px 28px;
+}
+
+.btn-outline:hover {
+    background: #7b5ed7;
+    color: white !important;
+    -webkit-text-fill-color: white;
+}
+
+/* Linkler */
+a {
+    color: #7b5ed7;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+a:hover {
+    color: #5b3cc4;
+    text-decoration: underline;
+}
+
+/* Alt bağlantılar */
+.footer-links {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    font-size: 0.95rem;
+}
+
+/* Ufak responsive */
+@media (max-width: 480px) {
+    .card {
+        padding: 28px 20px;
+    }
+    h1 { font-size: 1.5rem; }
+    .suggestion { font-size: 1.1rem; padding: 14px 18px; }
+}
